@@ -36,6 +36,8 @@ type Config struct {
 	RateLimitDuration  time.Duration `help:"the rate at which request are allowed" default:"5m"`
 	RateLimitNumEvents int           `help:"number of events available during duration" default:"5"`
 	RateLimitNumLimits int           `help:"number of IPs whose rate limits we store" default:"1000"`
+
+	CaptchaSiteKey string `help:"captcha site key" default:""`
 }
 
 // Server represents main admin portal http server with all endpoints.
@@ -106,7 +108,13 @@ func (server *Server) Index(w http.ResponseWriter, r *http.Request) {
 	header.Set("X-Content-Type-Options", "nosniff")
 	header.Set("Referrer-Policy", "same-origin")
 
-	err := server.indexTemplate.Execute(w, nil)
+	var data struct {
+		CaptchaSiteKey string
+	}
+
+	data.CaptchaSiteKey = server.config.CaptchaSiteKey
+
+	err := server.indexTemplate.Execute(w, data)
 	if err != nil {
 		server.log.Error("can not execute index template", zap.Error(Error.Wrap(err)))
 		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
@@ -216,9 +224,15 @@ func (server *Server) rateLimit(next http.Handler) http.Handler {
 func (server *Server) compressionHandler(fn http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		isGzipSupported := strings.Contains(r.Header.Get("Accept-Encoding"), "gzip")
+		isBrotliSupported := strings.Contains(r.Header.Get("Accept-Encoding"), "br")
+		if !isGzipSupported && !isBrotliSupported {
+			fn.ServeHTTP(w, r)
+			return
+		}
 		extension := filepath.Ext(r.RequestURI)
 		// we compress only fonts, js and css bundles
 		formats := map[string]bool{
+			".js":  true,
 			".css": true,
 		}
 		isNeededFormatToCompress := formats[extension]
@@ -239,8 +253,13 @@ func (server *Server) compressionHandler(fn http.Handler) http.Handler {
 		newRequest := r.Clone(r.Context())
 		*newRequest.URL = *r.URL
 
-		w.Header().Set("Content-Encoding", "gzip")
-		newRequest.URL.Path += ".gz"
+		if isBrotliSupported {
+			w.Header().Set("Content-Encoding", "br")
+			newRequest.URL.Path += ".br"
+		} else {
+			w.Header().Set("Content-Encoding", "gzip")
+			newRequest.URL.Path += ".gz"
+		}
 
 		fn.ServeHTTP(w, newRequest)
 	})
@@ -248,7 +267,7 @@ func (server *Server) compressionHandler(fn http.Handler) http.Handler {
 
 // initializeTemplates initializes and caches templates for sno registration server.
 func (server *Server) initializeTemplates() (err error) {
-	server.indexTemplate, err = template.ParseFiles(filepath.Join(server.config.StaticDir, "index.html"))
+	server.indexTemplate, err = template.ParseFiles(filepath.Join(server.config.StaticDir, "dist", "index.html"))
 	if err != nil {
 		return err
 	}
