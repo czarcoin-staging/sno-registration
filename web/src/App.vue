@@ -121,7 +121,9 @@
                         />
                         <img
                             src="@/../../static/img/rocket.png"
+                            srcset="@/../../static/img/rocket_2x.png"
                             alt="rocket image"
+                            class="image rocket"
                         />
                     </picture>
                     <h1 class="fs-title">You’ve completed the first step!</h1>
@@ -168,7 +170,9 @@
                         />
                         <img
                             src="@/../../static/img/fingerprint.png"
+                            srcset="@/../../static/img/fingerprint_2x.png"
                             alt="fingerpring image"
+                            class="image fingerprint"
                         />
                     </picture>
                 </div>
@@ -182,7 +186,9 @@
                         />
                         <img
                             src="@/../../static/img/setup.png"
+                            srcset="@/../../static/img/setup_2x.png"
                             alt="setup image"
+                            class="image setup"
                         />
                     </picture>
                 </div>
@@ -347,7 +353,9 @@
                             />
                             <img
                                 src="@/../../static/img/qnap.png"
+                                srcset="@/../../static/img/qnap_2x.png"
                                 alt="qnap image"
+                                class="image qnap"
                             />
                         </picture>
                         <span class="connector-item-sub-title">
@@ -373,7 +381,9 @@
                             />
                             <img
                                 src="@/../../static/img/synology.png"
+                                srcset="@/../../static/img/synology_2x.png"
                                 alt="synology image"
+                                class="image synology"
                             />
                         </picture>
                         <span class="connector-item-sub-title">
@@ -402,7 +412,9 @@
                             />
                             <img
                                 src="@/../../static/img/westdig.png"
+                                srcset="@/../../static/img/westdig_2x.png"
                                 alt="westdig image"
+                                class="image westdig"
                             />
                         </picture>
                         <span class="connector-item-sub-title">
@@ -455,7 +467,9 @@
                         />
                         <img
                             src="@/../../static/img/docs.png"
+                            srcset="@/../../static/img/docs_2x.png"
                             alt="docs image"
+                            class="image docs"
                         />
                     </picture>
                     <h1 class="doc-for-title">Documentation</h1>
@@ -470,7 +484,9 @@
                         />
                         <img
                             src="@/../../static/img/forum.png"
+                            srcset="@/../../static/img/forum_2x.png"
                             alt="forum image"
+                            class="image forum"
                         />
                     </picture>
                     <h1 class="doc-for-title">Forum</h1>
@@ -560,7 +576,7 @@
 </template>
 
 <script>
-    import {MetaUtils} from "./utils/meta";
+    import { MetaUtils } from "./utils/meta";
 
     export default {
         name: 'App',
@@ -1118,6 +1134,7 @@
         background-color: #f7f8fa;
         border-radius: 8px;
         width: auto;
+        min-width: 300px;
         max-height: 188px;
         min-height: 188px;
         padding: 20px;
@@ -1667,6 +1684,42 @@
     .button-active {
         opacity: 1;
         cursor: pointer;
+    }
+
+    .image {
+        width: 100%;
+    }
+
+    .fingerprint {
+        max-width: 180px;
+    }
+
+    .setup {
+        max-width: 232px;
+    }
+
+    .qnap {
+        max-width: 115px;
+    }
+
+    .synology {
+        max-width: 138px;
+    }
+
+    .westdig {
+        max-width: 154px;
+    }
+
+    .docs {
+        max-width: 85px;
+    }
+
+    .forum {
+        max-width: 98px;
+    }
+
+    .rocket {
+        max-width: 105px;
     }
 
     @media screen and (max-width: 1150px) {
