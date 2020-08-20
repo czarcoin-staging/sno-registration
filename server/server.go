@@ -127,12 +127,16 @@ func (server *Server) RegistrationToken(w http.ResponseWriter, r *http.Request) 
 		return
 	}
 
+	server.log.Debug("new SNO registration attempt", zap.String("email", email))
+
 	token, err := server.service.GetAuthToken(ctx, email)
 	if err != nil {
 		server.log.Error("failed to get auth token", zap.Error(Error.Wrap(err)))
 		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
 		return
 	}
+
+	server.log.Debug("registration token issued successfully", zap.String("token", token))
 
 	err = json.NewEncoder(w).Encode(token)
 	if err != nil {
@@ -153,6 +157,8 @@ func (server *Server) Subscribe(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, http.StatusText(http.StatusBadRequest), http.StatusBadRequest)
 		return
 	}
+
+	server.log.Debug("new subscription on newsletter", zap.String("email", email))
 
 	err = server.service.Subscribe(ctx, email)
 	if err != nil {
