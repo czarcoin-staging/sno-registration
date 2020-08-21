@@ -19,9 +19,9 @@ import (
 
 // Config contains configurable values for sno registration Peer.
 type Config struct {
-	CAServerURL  string `help:"url to the CA server" default:""`
-	SegmentioKey string `help:"write key for segment.io service" default:""`
-	Server       server.Config
+	CAServerURL string `help:"url to the CA server" default:""`
+	Analytics   analytics.Config
+	Server      server.Config
 }
 
 // Peer is the representation of a SNO registration service.
@@ -35,8 +35,10 @@ type Peer struct {
 
 // New is a constructor for sno registration Peer.
 func New(log *zap.Logger, config Config) (peer *Peer, err error) {
-	segment := analytics.NewClient(config.SegmentioKey)
-
+	segment, err := analytics.NewClient(log, config.Analytics)
+	if err != nil {
+		return nil, err
+	}
 	peer = &Peer{
 		Log:     log,
 		Segment: segment,

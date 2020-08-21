@@ -7,10 +7,16 @@ import (
 	"time"
 
 	"github.com/zeebo/errs"
+	"go.uber.org/zap"
 	"gopkg.in/segmentio/analytics-go.v3"
 )
 
-// TODO: should context be passed to the analytics methods?
+// Config contains configurable values for segment analytics.
+type Config struct {
+	PublicKey string `help:"write key for segment.io service" default:""`
+	BatchSize int    `help:"number of messages queued before sending" default:"1"`
+	Verbose   bool   `help:"when set to true it will log debug lvl logs, not only errors" default:"false"`
+}
 
 // Error is an error class that indicates internal analytics error.
 var Error = errs.Class("analytics error")
@@ -21,12 +27,19 @@ type Client struct {
 }
 
 // NewClient is a constructor for Client client.
-func NewClient(pubkey string) *Client {
-	segment := Client{
-		client: analytics.New(pubkey),
+func NewClient(log *zap.Logger, config Config) (*Client, error) {
+	client, err := analytics.NewWithConfig(config.PublicKey, analytics.Config{
+		BatchSize: config.BatchSize,
+		Logger:    analytics.StdLogger(zap.NewStdLog(log)),
+		Verbose:   config.Verbose,
+	})
+	if err != nil {
+		return nil, Error.Wrap(err)
 	}
 
-	return &segment
+	return &Client{
+		client: client,
+	}, nil
 }
 
 // Identify sends user information like email and auth token to the Client service.
