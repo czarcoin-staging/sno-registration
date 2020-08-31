@@ -114,18 +114,20 @@
                     </div>
                 </div>
                 <div class="fs-success-container" id="fs-success-container" v-if="token">
-                    <picture>
-                        <source
-                            srcset="@/../../static/img/rocket.webp"
-                            type="image/webp"
-                        />
-                        <img
-                            src="@/../../static/img/rocket.png"
-                            srcset="@/../../static/img/rocket_2x.png"
-                            alt="rocket image"
-                            class="image rocket"
-                        />
-                    </picture>
+                    <lazy-component>
+                        <picture>
+                            <source
+                                srcset="@/../../static/img/rocket.webp"
+                                type="image/webp"
+                            />
+                            <img
+                                src="@/../../static/img/rocket.png"
+                                srcset="@/../../static/img/rocket_2x.png"
+                                alt="rocket image"
+                                class="image rocket"
+                            />
+                        </picture>
+                    </lazy-component>
                     <h1 class="fs-title">You’ve completed the first step!</h1>
                     <p class="fs-sub-title">
                         Your auth token is ready. We’ve sent a copy to your email.<br/>
@@ -163,34 +165,38 @@
                     </a>
                 </div>
                 <div class="ss-right-area">
-                    <picture>
-                        <source
-                            srcset="@/../../static/img/fingerprint.webp"
-                            type="image/webp"
-                        />
-                        <img
-                            src="@/../../static/img/fingerprint.png"
-                            srcset="@/../../static/img/fingerprint_2x.png"
-                            alt="fingerpring image"
-                            class="image fingerprint"
-                        />
-                    </picture>
+                    <lazy-component>
+                        <picture>
+                            <source
+                                srcset="@/../../static/img/fingerprint.webp"
+                                type="image/webp"
+                            />
+                            <img
+                                src="@/../../static/img/fingerprint.png"
+                                srcset="@/../../static/img/fingerprint_2x.png"
+                                alt="fingerpring image"
+                                class="image fingerprint"
+                            />
+                        </picture>
+                    </lazy-component>
                 </div>
             </div>
             <div class="ts-container">
                 <div class="ts-left-area">
-                    <picture>
-                        <source
-                            srcset="@/../../static/img/setup.webp"
-                            type="image/webp"
-                        />
-                        <img
-                            src="@/../../static/img/setup.png"
-                            srcset="@/../../static/img/setup_2x.png"
-                            alt="setup image"
-                            class="image setup"
-                        />
-                    </picture>
+                    <lazy-component>
+                        <picture>
+                            <source
+                                srcset="@/../../static/img/setup.webp"
+                                type="image/webp"
+                            />
+                            <img
+                                src="@/../../static/img/setup.png"
+                                srcset="@/../../static/img/setup_2x.png"
+                                alt="setup image"
+                                class="image setup"
+                            />
+                        </picture>
+                    </lazy-component>
                 </div>
                 <div class="ts-right-area">
                     <span class="step-number">Step 3</span>
@@ -346,18 +352,20 @@
                 <h1 class="nas-title">Network-Attached Storage (NAS)</h1>
                 <div class="connector-item-list">
                     <div class="connector-item">
-                        <picture class="nas-image">
-                            <source
-                                srcset="@/../../static/img/qnap.webp"
-                                type="image/webp"
-                            />
-                            <img
-                                src="@/../../static/img/qnap.png"
-                                srcset="@/../../static/img/qnap_2x.png"
-                                alt="qnap image"
-                                class="image qnap"
-                            />
-                        </picture>
+                        <lazy-component>
+                            <picture class="nas-image">
+                                <source
+                                    srcset="@/../../static/img/qnap.webp"
+                                    type="image/webp"
+                                />
+                                <img
+                                    src="@/../../static/img/qnap.png"
+                                    srcset="@/../../static/img/qnap_2x.png"
+                                    alt="qnap image"
+                                    class="image qnap"
+                                />
+                            </picture>
+                        </lazy-component>
                         <span class="connector-item-sub-title">
                             Setup Storage Node App on your QNAP NAS Device
                         </span>
@@ -374,18 +382,20 @@
                         </div>
                     </div>
                     <div class="connector-item synology-item">
-                        <picture class="nas-image">
-                            <source
-                                srcset="@/../../static/img/synology.webp"
-                                type="image/webp"
-                            />
-                            <img
-                                src="@/../../static/img/synology.png"
-                                srcset="@/../../static/img/synology_2x.png"
-                                alt="synology image"
-                                class="image synology"
-                            />
-                        </picture>
+                        <lazy-component>
+                            <picture class="nas-image">
+                                <source
+                                    srcset="@/../../static/img/synology.webp"
+                                    type="image/webp"
+                                />
+                                <img
+                                    src="@/../../static/img/synology.png"
+                                    srcset="@/../../static/img/synology_2x.png"
+                                    alt="synology image"
+                                    class="image synology"
+                                />
+                            </picture>
+                        </lazy-component>
                         <span class="connector-item-sub-title">
                             Coming soon
                         </span>
@@ -405,18 +415,20 @@
                         </div>
                     </div>
                     <div class="connector-item">
-                        <picture class="nas-image">
-                            <source
-                                srcset="@/../../static/img/westdig.webp"
-                                type="image/webp"
-                            />
-                            <img
-                                src="@/../../static/img/westdig.png"
-                                srcset="@/../../static/img/westdig_2x.png"
-                                alt="westdig image"
-                                class="image westdig"
-                            />
-                        </picture>
+                        <lazy-component>
+                            <picture class="nas-image">
+                                <source
+                                    srcset="@/../../static/img/westdig.webp"
+                                    type="image/webp"
+                                />
+                                <img
+                                    src="@/../../static/img/westdig.png"
+                                    srcset="@/../../static/img/westdig_2x.png"
+                                    alt="westdig image"
+                                    class="image westdig"
+                                />
+                            </picture>
+                        </lazy-component>
                         <span class="connector-item-sub-title">
                             Coming soon
                         </span>
@@ -460,35 +472,39 @@
             </div>
             <div class="doc-for-area">
                 <div class="doc-for-container-left">
-                    <picture>
-                        <source
-                            srcset="@/../../static/img/docs.webp"
-                            type="image/webp"
-                        />
-                        <img
-                            src="@/../../static/img/docs.png"
-                            srcset="@/../../static/img/docs_2x.png"
-                            alt="docs image"
-                            class="image docs"
-                        />
-                    </picture>
+                    <lazy-component>
+                        <picture>
+                            <source
+                                srcset="@/../../static/img/docs.webp"
+                                type="image/webp"
+                            />
+                            <img
+                                src="@/../../static/img/docs.png"
+                                srcset="@/../../static/img/docs_2x.png"
+                                alt="docs image"
+                                class="image docs"
+                            />
+                        </picture>
+                    </lazy-component>
                     <h1 class="doc-for-title">Documentation</h1>
                     <span class="doc-for-sub-title">Need help? Check our docs to find the answers you need.</span>
                     <a class="doc-for-button" href="https://documentation.storj.io" target="_blank" rel="noreferrer noopener">Visit Docs</a>
                 </div>
                 <div class="doc-for-container-right">
-                    <picture>
-                        <source
-                            srcset="@/../../static/img/forum.webp"
-                            type="image/webp"
-                        />
-                        <img
-                            src="@/../../static/img/forum.png"
-                            srcset="@/../../static/img/forum_2x.png"
-                            alt="forum image"
-                            class="image forum"
-                        />
-                    </picture>
+                    <lazy-component>
+                        <picture>
+                            <source
+                                srcset="@/../../static/img/forum.webp"
+                                type="image/webp"
+                            />
+                            <img
+                                src="@/../../static/img/forum.png"
+                                srcset="@/../../static/img/forum_2x.png"
+                                alt="forum image"
+                                class="image forum"
+                            />
+                        </picture>
+                    </lazy-component>
                     <h1 class="doc-for-title">Forum</h1>
                     <span class="doc-for-sub-title">Check our forum if you have any questions. There are many great resources to help you with any problem.</span>
                     <a class="doc-for-button" href="https://forum.storj.io/c/sno-category/10" target="_blank" rel="noreferrer noopener">Visit Forum</a>
@@ -523,23 +539,33 @@
                         <div class="footer-column">
                             <h2 class="footer-col-heading">Connect</h2>
                             <a class="footer-link" href="https://twitter.com/storjproject">
-                                <img class="social-link" src="@/../../static/img/twitter.svg" alt="Storj on Twitter">
+                                <lazy-component>
+                                    <img class="social-link" src="@/../../static/img/twitter.svg" alt="Storj on Twitter">
+                                </lazy-component>
                                 Twitter
                             </a>
                             <a class="footer-link" href="https://github.com/Storj/">
-                                <img class="social-link" src="@/../../static/img/github.svg" alt="Storj on GitHub">
+                                <lazy-component>
+                                    <img class="social-link" src="@/../../static/img/github.svg" alt="Storj on GitHub">
+                                </lazy-component>
                                 GitHub
                             </a>
                             <a class="footer-link" href="https://www.reddit.com/r/storj/">
-                                <img class="social-link" src="@/../../static/img/reddit.svg" alt="Storj on Reddit">
+                                <lazy-component>
+                                    <img class="social-link" src="@/../../static/img/reddit.svg" alt="Storj on Reddit">
+                                </lazy-component>
                                 Reddit
                             </a>
                             <a class="footer-link" href="https://www.facebook.com/storjproject">
-                                <img class="social-link" src="@/../../static/img/facebook.svg" alt="Storj on Facebook">
+                                <lazy-component>
+                                    <img class="social-link" src="@/../../static/img/facebook.svg" alt="Storj on Facebook">
+                                </lazy-component>
                                 Facebook
                             </a>
                             <a class="footer-link" href="https://medium.com/@storjproject">
-                                <img class="social-link" src="@/../../static/img/medium.svg" alt="Storj on Medium">
+                                <lazy-component>
+                                    <img class="social-link" src="@/../../static/img/medium.svg" alt="Storj on Medium">
+                                </lazy-component>
                                 Medium
                             </a>
                         </div>
