@@ -72,7 +72,7 @@
                             <div
                                 class="g-recaptcha"
                                 :data-sitekey="captchaKey"
-                                :data-callback="recaptchaOnSuccess"
+                                data-callback="recaptchaOnSuccessCallback"
                             >
                             </div>
                             <br/>
@@ -685,6 +685,7 @@
         },
         mounted() {
             this.setMetaContext();
+            window.recaptchaOnSuccessCallback = this.recaptchaOnSuccess.bind(this);
         }
     }
 </script>
@@ -881,7 +882,6 @@
         background-color: #fff;
         border-radius: 4px;
         width: 100%;
-        display: none;
         flex-direction: column;
         align-items: center;
         padding: 30px 0;
@@ -1107,7 +1107,6 @@
 
     .fs-email-container {
         width: 100%;
-        display: none;
     }
 
     .fs-email-label {
