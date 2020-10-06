@@ -37,6 +37,7 @@ type Config struct {
 	RateLimitNumEvents int           `help:"number of events available during duration" default:"5"`
 	RateLimitNumLimits int           `help:"number of IPs whose rate limits we store" default:"1000"`
 
+	SEO            string `help:"used to communicate with web crawlers and other web robots" default:"User-agent: *\nDisallow: \nDisallow: /cgi-bin/"`
 	CaptchaSiteKey string `help:"captcha site key" default:""`
 }
 
@@ -80,6 +81,7 @@ func NewServer(log *zap.Logger, service *service.Service, config *Config, listen
 	router.Handle("/", http.HandlerFunc(server.Index)).Methods(http.MethodGet)
 	router.Handle("/{email}", server.rateLimit(http.HandlerFunc(server.RegistrationToken))).Methods(http.MethodPut)
 	router.Handle("/{email}", server.rateLimit(http.HandlerFunc(server.Subscribe))).Methods(http.MethodPost)
+	router.HandleFunc("/robots.txt", server.seoHandler)
 
 	server.server = http.Server{
 		Handler: router,
@@ -93,6 +95,7 @@ func (server *Server) Index(w http.ResponseWriter, r *http.Request) {
 	header := w.Header()
 
 	cspValues := []string{
+		"base-uri 'self'",
 		"default-src 'self'",
 		"connect-src 'self'",
 		"frame-ancestors 'self'",
@@ -263,6 +266,19 @@ func (server *Server) compressionHandler(fn http.Handler) http.Handler {
 
 		fn.ServeHTTP(w, newRequest)
 	})
+}
+
+// seoHandler used to communicate with web crawlers and other web robots.
+func (server *Server) seoHandler(w http.ResponseWriter, req *http.Request) {
+	header := w.Header()
+
+	header.Set("Content-Type", mime.TypeByExtension(".txt"))
+	header.Set("X-Content-Type-Options", "nosniff")
+
+	_, err := w.Write([]byte(server.config.SEO))
+	if err != nil {
+		server.log.Error(err.Error())
+	}
 }
 
 // initializeTemplates initializes and caches templates for sno registration server.
