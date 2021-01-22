@@ -983,6 +983,10 @@
         text-align: center;
     }
 
+    .fs-right-area .fs-title {
+        margin-top: 0;
+    }
+
     .fs-sub-title {
         font-family: Roboto, sans-serif;
         font-style: normal;
@@ -991,7 +995,7 @@
         line-height: 22px;
         color: #000;
         margin: 0 0 24px 0;
-        text-align: center;
+        text-align: left;
     }
 
     .fs-button {
@@ -1065,7 +1069,7 @@
         line-height: 40px;
         color: #111417;
         margin: 22px 0 5px 0;
-        text-align: center;
+        text-align: left;
     }
 
     .step-sub-title {
@@ -1075,7 +1079,7 @@
         font-size: 16px;
         line-height: 25px;
         color: #2b333b;
-        margin-bottom: 45px;
+        margin-bottom: 20px;
     }
 
     .setup-how-to-container {
@@ -1168,7 +1172,7 @@
         font-size: 22px;
         line-height: 40px;
         color: #252a32;
-        margin: 15px 0 40px 0;
+        margin: 15px 0 20px 0;
     }
 
     .connector-item {
@@ -1418,12 +1422,12 @@
 
     .hw-area {
         width: 100%;
-        padding: 0 125px;
+        padding: 40px 125px;
     }
 
     .hw-container {
         width: 100%;
-        padding: 32px 65px 16px 65px;
+        padding: 40px 65px 24px 65px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1438,7 +1442,7 @@
         font-size: 28px;
         line-height: 40px;
         color: #252a32;
-        margin: 0 0 36px 0;
+        margin: 0 0 20px 0;
     }
 
     .hw-list {
@@ -1516,6 +1520,8 @@
         line-height: 38px;
         text-align: center;
         color: #111417;
+        margin-bottom: 0;
+        margin-top: 0;
     }
 
     .doc-for-sub-title {
