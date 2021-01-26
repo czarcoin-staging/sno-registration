@@ -1002,7 +1002,7 @@
         opacity: 0.3;
         width: 191px;
         height: 42px;
-        background: #0055c6;
+        background: #0059D0;
         border-radius: 4px;
         font-family: Poppins, sans-serif;
         font-style: normal;
@@ -1012,6 +1012,7 @@
         text-align: center;
         color: #fff;
         padding: 0;
+        border: 0;
     }
 
     .fs-button-active {
@@ -1234,13 +1235,14 @@
         justify-content: center;
         color: #fff;
         text-decoration: none;
-        background: #0055C6;
+        background: #0059D0;
         border-radius: 4px;
         margin-right: 5px;
+        border: 0;
     }
 
     .connector-item-button:hover {
-        background-color: #0055c6;
+        background-color: #133E9C;
     }
 
     .connector-item-link {
@@ -1334,7 +1336,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #0055C6;
+        background: #0055D0;
         border-radius: 4px;
         width: 151px;
         height: 35px;
@@ -1349,7 +1351,7 @@
     }
 
     .os-button:hover {
-        background-color: #0055c6;
+        background-color: #133E9C;
     }
 
     .os-button-svg {
@@ -1540,7 +1542,7 @@
         justify-content: center;
         width: 170px;
         height: 48px;
-        background: #0055C6;
+        background: #0055D0;
         border-radius: 6px;
         color: #fff;
         text-decoration: none;
@@ -1551,7 +1553,7 @@
     }
 
     .doc-for-button:hover {
-        background-color: #0055c6;
+        background-color: #133E9C;
     }
 
     .footer-address {
