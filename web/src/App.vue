@@ -692,35 +692,8 @@
 </script>
 
 <style lang="css">
-    @font-face {
-        font-family: Roboto;
-        font-display: swap;
-        src: url('../../static/fonts/Roboto/Roboto-Regular.woff2');
-    }
-
-    @font-face {
-        font-family: Poppins-Medium;
-        font-display: swap;
-        src: url('../../static/fonts/Poppins/Poppins-Medium.woff2');
-    }
-
-    @font-face {
-        font-family: Poppins-Bold;
-        font-display: swap;
-        src: url('../../static/fonts/Poppins/Poppins-Bold.woff2');
-    }
-
-    @font-face {
-        font-family: Inter;
-        font-display: swap;
-        src: url('../../static/fonts/Inter/inter-regular.woff2');
-    }
-
-    @font-face {
-        font-family: Poppins;
-        font-display: swap;
-        src: url('../../static/fonts/Poppins/Poppins-Regular.woff2');
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
     *,
     :after,
@@ -791,7 +764,7 @@
 
     .setup-nav-link {
         margin-right: 30px;
-        font-family: Poppins, sans-serif;
+        font-family: Roboto, sans-serif;
         font-style: normal;
         font-size: 14px;
         line-height: 20px;
@@ -843,7 +816,7 @@
         color: #fff;
         font-family: Poppins, sans-serif;
         font-style: normal;
-        font-weight: 500;
+        font-weight: 700;
         font-size: 14px;
         line-height: 20px;
         display: flex;
@@ -867,6 +840,7 @@
 
     .setup-title {
         font-family: Poppins, sans-serif;
+        font-weight: 700;
         font-size: 32px;
         line-height: 40px;
         text-align: center;
@@ -968,14 +942,15 @@
     .step-number {
         font-family: Poppins, sans-serif;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 700;
         color: #68788d;
         font-size: 14px;
         line-height: 14px;
     }
 
     .fs-title {
-        font-family: Poppins-Bold, sans-serif;
+        font-family: Poppins, sans-serif;
+        font-weight: 700;
         font-size: 22px;
         line-height: 19px;
         color: #000;
@@ -1064,9 +1039,10 @@
     }
 
     .step-title {
-        font-family: Poppins-Bold, sans-serif;
+        font-family: Poppins, sans-serif;
         font-style: normal;
         font-size: 28px;
+        font-weight: 700;
         line-height: 40px;
         color: #111417;
         margin: 22px 0 5px 0;
@@ -1095,7 +1071,7 @@
     .setup-how-to-text {
         font-family: Poppins, sans-serif;
         font-style: normal;
-        font-weight: 500;
+        font-weight: 700;
         font-size: 16px;
         line-height: 25px;
         color: #0055C6;
@@ -1131,7 +1107,7 @@
     }
 
     .fs-email-label {
-        font-family: Poppins, sans-serif;
+        font-family: Roboto, sans-serif;
         font-style: normal;
         font-weight: 300;
         font-size: 20px;
@@ -1167,9 +1143,9 @@
     }
 
     .frs-title {
-        font-family: Poppins-Medium, sans-serif;
+        font-family: Poppins, sans-serif;
         font-style: normal;
-        font-weight: 600;
+        font-weight: 700;
         font-size: 22px;
         line-height: 40px;
         color: #252a32;
@@ -1228,6 +1204,7 @@
 
     .connector-item-button {
         font-family: Poppins, sans-serif;
+        font-weight: 700;
         width: 151px;
         height: 35px;
         display: flex;
@@ -1250,7 +1227,7 @@
         align-items: center;
         font-family: Poppins, sans-serif;
         font-style: normal;
-        font-weight: 500;
+        font-weight: 700;
         font-size: 14px;
         line-height: 25px;
         color: #2582ff;
@@ -1283,7 +1260,7 @@
         box-sizing: border-box;
         border-radius: 2px;
         width: 86px;
-        font-family: Poppins, sans-serif;
+        font-family: Roboto, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 10px;
@@ -1314,7 +1291,7 @@
     }
 
     .os-title {
-        font-family: Inter, sans-serif;
+        font-family: Poppins, sans-serif;
         font-style: normal;
         font-weight: 700;
         font-size: 28px;
@@ -1343,7 +1320,7 @@
         min-height: 35px;
         font-family: Poppins, sans-serif;
         font-style: normal;
-        font-weight: 500;
+        font-weight: 700;
         font-size: 14px;
         line-height: 20px;
         color: #fff;
@@ -1407,7 +1384,7 @@
     .nas-title {
         font-family: Poppins, sans-serif;
         font-style: normal;
-        font-weight: 600;
+        font-weight: 700;
         font-size: 22px;
         line-height: 40px;
         color: #252a32;
