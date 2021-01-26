@@ -31,7 +31,7 @@
                             @click="toggleAdaptedMenu"
                             :class="[isAdaptedMenuShown ? 'setup-burger-menu--unactive' : 'setup-burger-menu--active']"
                         >
-                            <svg width="42" height="21" viewBox="0 0 42 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="32" height="21" viewBox="0 0 42 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <line y1="0.5" x2="42" y2="0.5" stroke="white"/>
                                 <line y1="10.5" x2="42" y2="10.5" stroke="white"/>
                                 <line y1="20.5" x2="42" y2="20.5" stroke="white"/>
@@ -781,7 +781,8 @@
 
     .setup-burger-menu {
         justify-content: center;
-        padding: 10px;
+        padding: 8px 8px 4px;
+        border-radius: 8px;
     }
 
     .setup-burger-menu--active {
