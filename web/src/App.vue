@@ -595,7 +595,7 @@
                     </div>
                 </div>
                 <address class="footer-address">
-                    &copy; 2020 Storj Labs Inc. - 3423 Piedmont Road NE, Suite 475, Atlanta, Georgia, 30305, United States
+                    &copy; 2021 Storj Labs Inc. - 3423 Piedmont Road NE, Suite 475, Atlanta, Georgia, 30305, United States
                 </address>
             </footer>
         </div>
