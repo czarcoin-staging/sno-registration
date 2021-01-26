@@ -834,6 +834,7 @@
     .setup-top-area {
         padding: 35px 125px 75px 125px;
         width: 100%;
+        background-color: #0059d0;
         background-image: url(../../static/img/topBackground.png);
         background-repeat: no-repeat;
         background-size: cover;
