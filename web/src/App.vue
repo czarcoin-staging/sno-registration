@@ -1278,7 +1278,7 @@
         width: 100%;
         display: flex;
         align-items: center;
-        background-color: #d0e3fe;
+        background-color: #F5F8FB;
         padding: 42px 125px;
     }
 
