@@ -1045,7 +1045,7 @@
         font-size: 28px;
         font-weight: 700;
         line-height: 40px;
-        color: #111417;
+        color: #000;
         margin: 22px 0 5px 0;
         text-align: left;
     }
@@ -1056,7 +1056,7 @@
         font-weight: 300;
         font-size: 16px;
         line-height: 25px;
-        color: #2b333b;
+        color: #000;
         margin-bottom: 20px;
     }
 
@@ -1297,7 +1297,7 @@
         font-weight: 700;
         font-size: 28px;
         line-height: 38px;
-        color: #252a32;
+        color: #000;
     }
 
     .os-sub-title {
@@ -1388,7 +1388,7 @@
         font-weight: 700;
         font-size: 22px;
         line-height: 40px;
-        color: #252a32;
+        color: #000;
         margin-bottom: 40px;
     }
 
@@ -1421,7 +1421,7 @@
         font-weight: 700;
         font-size: 28px;
         line-height: 40px;
-        color: #252a32;
+        color: #000;
         margin: 0 0 20px 0;
     }
 
@@ -1448,7 +1448,7 @@
         font-weight: 300;
         font-size: 16px;
         line-height: 25px;
-        color: #2b333b;
+        color: #000;
         margin-bottom: 16px;
     }
 
@@ -1499,7 +1499,7 @@
         font-size: 28px;
         line-height: 38px;
         text-align: center;
-        color: #111417;
+        color: #000;
         margin-bottom: 0;
         margin-top: 0;
     }
@@ -1511,7 +1511,7 @@
         font-size: 16px;
         line-height: 24px;
         text-align: center;
-        color: #2b333b;
+        color: #000;
     }
 
     .doc-for-button {
