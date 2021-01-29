@@ -31,7 +31,7 @@
                             @click="toggleAdaptedMenu"
                             :class="[isAdaptedMenuShown ? 'setup-burger-menu--unactive' : 'setup-burger-menu--active']"
                         >
-                            <svg width="42" height="21" viewBox="0 0 42 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="32" height="21" viewBox="0 0 42 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <line y1="0.5" x2="42" y2="0.5" stroke="white"/>
                                 <line y1="10.5" x2="42" y2="10.5" stroke="white"/>
                                 <line y1="20.5" x2="42" y2="20.5" stroke="white"/>
@@ -595,7 +595,7 @@
                     </div>
                 </div>
                 <address class="footer-address">
-                    &copy; 2020 Storj Labs Inc. - 3423 Piedmont Road NE, Suite 475, Atlanta, Georgia, 30305, United States
+                    &copy; 2021 Storj Labs Inc. - 3423 Piedmont Road NE, Suite 475, Atlanta, Georgia, 30305, United States
                 </address>
             </footer>
         </div>
@@ -692,35 +692,8 @@
 </script>
 
 <style lang="css">
-    @font-face {
-        font-family: Roboto;
-        font-display: swap;
-        src: url('../../static/fonts/Roboto/Roboto-Regular.woff2');
-    }
-
-    @font-face {
-        font-family: Poppins-Medium;
-        font-display: swap;
-        src: url('../../static/fonts/Poppins/Poppins-Medium.woff2');
-    }
-
-    @font-face {
-        font-family: Poppins-Bold;
-        font-display: swap;
-        src: url('../../static/fonts/Poppins/Poppins-Bold.woff2');
-    }
-
-    @font-face {
-        font-family: Inter;
-        font-display: swap;
-        src: url('../../static/fonts/Inter/inter-regular.woff2');
-    }
-
-    @font-face {
-        font-family: Poppins;
-        font-display: swap;
-        src: url('../../static/fonts/Poppins/Poppins-Regular.woff2');
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
     *,
     :after,
@@ -791,7 +764,7 @@
 
     .setup-nav-link {
         margin-right: 30px;
-        font-family: Poppins, sans-serif;
+        font-family: Roboto, sans-serif;
         font-style: normal;
         font-size: 14px;
         line-height: 20px;
@@ -808,7 +781,8 @@
 
     .setup-burger-menu {
         justify-content: center;
-        padding: 10px;
+        padding: 8px 8px 4px;
+        border-radius: 8px;
     }
 
     .setup-burger-menu--active {
@@ -843,7 +817,7 @@
         color: #fff;
         font-family: Poppins, sans-serif;
         font-style: normal;
-        font-weight: 500;
+        font-weight: 700;
         font-size: 14px;
         line-height: 20px;
         display: flex;
@@ -860,6 +834,7 @@
     .setup-top-area {
         padding: 35px 125px 75px 125px;
         width: 100%;
+        background-color: #0059d0;
         background-image: url(../../static/img/topBackground.png);
         background-repeat: no-repeat;
         background-size: cover;
@@ -867,6 +842,7 @@
 
     .setup-title {
         font-family: Poppins, sans-serif;
+        font-weight: 700;
         font-size: 32px;
         line-height: 40px;
         text-align: center;
@@ -968,19 +944,24 @@
     .step-number {
         font-family: Poppins, sans-serif;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 700;
         color: #68788d;
         font-size: 14px;
         line-height: 14px;
     }
 
     .fs-title {
-        font-family: Poppins-Bold, sans-serif;
+        font-family: Poppins, sans-serif;
+        font-weight: 700;
         font-size: 22px;
         line-height: 19px;
         color: #000;
         margin: 22px 0 16px 0;
         text-align: center;
+    }
+
+    .fs-right-area .fs-title {
+        margin-top: 0;
     }
 
     .fs-sub-title {
@@ -991,14 +972,14 @@
         line-height: 22px;
         color: #000;
         margin: 0 0 24px 0;
-        text-align: center;
+        text-align: left;
     }
 
     .fs-button {
         opacity: 0.3;
         width: 191px;
         height: 42px;
-        background: #0055c6;
+        background: #0059D0;
         border-radius: 4px;
         font-family: Poppins, sans-serif;
         font-style: normal;
@@ -1008,6 +989,7 @@
         text-align: center;
         color: #fff;
         padding: 0;
+        border: 0;
     }
 
     .fs-button-active {
@@ -1059,13 +1041,14 @@
     }
 
     .step-title {
-        font-family: Poppins-Bold, sans-serif;
+        font-family: Poppins, sans-serif;
         font-style: normal;
         font-size: 28px;
+        font-weight: 700;
         line-height: 40px;
-        color: #111417;
+        color: #000;
         margin: 22px 0 5px 0;
-        text-align: center;
+        text-align: left;
     }
 
     .step-sub-title {
@@ -1074,8 +1057,8 @@
         font-weight: 300;
         font-size: 16px;
         line-height: 25px;
-        color: #2b333b;
-        margin-bottom: 45px;
+        color: #000;
+        margin-bottom: 20px;
     }
 
     .setup-how-to-container {
@@ -1090,7 +1073,7 @@
     .setup-how-to-text {
         font-family: Poppins, sans-serif;
         font-style: normal;
-        font-weight: 500;
+        font-weight: 700;
         font-size: 16px;
         line-height: 25px;
         color: #0055C6;
@@ -1126,7 +1109,7 @@
     }
 
     .fs-email-label {
-        font-family: Poppins, sans-serif;
+        font-family: Roboto, sans-serif;
         font-style: normal;
         font-weight: 300;
         font-size: 20px;
@@ -1162,13 +1145,13 @@
     }
 
     .frs-title {
-        font-family: Poppins-Medium, sans-serif;
+        font-family: Poppins, sans-serif;
         font-style: normal;
-        font-weight: 600;
+        font-weight: 700;
         font-size: 22px;
         line-height: 40px;
         color: #252a32;
-        margin: 15px 0 40px 0;
+        margin: 15px 0 20px 0;
     }
 
     .connector-item {
@@ -1223,6 +1206,7 @@
 
     .connector-item-button {
         font-family: Poppins, sans-serif;
+        font-weight: 700;
         width: 151px;
         height: 35px;
         display: flex;
@@ -1230,13 +1214,14 @@
         justify-content: center;
         color: #fff;
         text-decoration: none;
-        background: #0055C6;
+        background: #0059D0;
         border-radius: 4px;
         margin-right: 5px;
+        border: 0;
     }
 
     .connector-item-button:hover {
-        background-color: #0055c6;
+        background-color: #133E9C;
     }
 
     .connector-item-link {
@@ -1244,7 +1229,7 @@
         align-items: center;
         font-family: Poppins, sans-serif;
         font-style: normal;
-        font-weight: 500;
+        font-weight: 700;
         font-size: 14px;
         line-height: 25px;
         color: #2582ff;
@@ -1277,7 +1262,7 @@
         box-sizing: border-box;
         border-radius: 2px;
         width: 86px;
-        font-family: Poppins, sans-serif;
+        font-family: Roboto, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 10px;
@@ -1293,7 +1278,7 @@
         width: 100%;
         display: flex;
         align-items: center;
-        background-color: #d0e3fe;
+        background-color: #F5F8FB;
         padding: 42px 125px;
     }
 
@@ -1308,12 +1293,12 @@
     }
 
     .os-title {
-        font-family: Inter, sans-serif;
+        font-family: Poppins, sans-serif;
         font-style: normal;
         font-weight: 700;
         font-size: 28px;
         line-height: 38px;
-        color: #252a32;
+        color: #000;
     }
 
     .os-sub-title {
@@ -1330,14 +1315,14 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #0055C6;
+        background: #0055D0;
         border-radius: 4px;
         width: 151px;
         height: 35px;
         min-height: 35px;
         font-family: Poppins, sans-serif;
         font-style: normal;
-        font-weight: 500;
+        font-weight: 700;
         font-size: 14px;
         line-height: 20px;
         color: #fff;
@@ -1345,7 +1330,7 @@
     }
 
     .os-button:hover {
-        background-color: #0055c6;
+        background-color: #133E9C;
     }
 
     .os-button-svg {
@@ -1401,10 +1386,10 @@
     .nas-title {
         font-family: Poppins, sans-serif;
         font-style: normal;
-        font-weight: 600;
+        font-weight: 700;
         font-size: 22px;
         line-height: 40px;
-        color: #252a32;
+        color: #000;
         margin-bottom: 40px;
     }
 
@@ -1418,12 +1403,12 @@
 
     .hw-area {
         width: 100%;
-        padding: 0 125px;
+        padding: 40px 125px;
     }
 
     .hw-container {
         width: 100%;
-        padding: 32px 65px 16px 65px;
+        padding: 40px 65px 24px 65px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1437,8 +1422,8 @@
         font-weight: 700;
         font-size: 28px;
         line-height: 40px;
-        color: #252a32;
-        margin: 0 0 36px 0;
+        color: #000;
+        margin: 0 0 20px 0;
     }
 
     .hw-list {
@@ -1464,7 +1449,7 @@
         font-weight: 300;
         font-size: 16px;
         line-height: 25px;
-        color: #2b333b;
+        color: #000;
         margin-bottom: 16px;
     }
 
@@ -1515,7 +1500,9 @@
         font-size: 28px;
         line-height: 38px;
         text-align: center;
-        color: #111417;
+        color: #000;
+        margin-bottom: 0;
+        margin-top: 0;
     }
 
     .doc-for-sub-title {
@@ -1525,7 +1512,7 @@
         font-size: 16px;
         line-height: 24px;
         text-align: center;
-        color: #2b333b;
+        color: #000;
     }
 
     .doc-for-button {
@@ -1534,7 +1521,7 @@
         justify-content: center;
         width: 170px;
         height: 48px;
-        background: #0055C6;
+        background: #0055D0;
         border-radius: 6px;
         color: #fff;
         text-decoration: none;
@@ -1545,7 +1532,7 @@
     }
 
     .doc-for-button:hover {
-        background-color: #0055c6;
+        background-color: #133E9C;
     }
 
     .footer-address {
